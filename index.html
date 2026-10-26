@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- VISTA PREVIA: quitar esta línea cuando el sitio pase a elrincondelosnietos.cl -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>El Rincón de los Nietos · Entretención familiar</title>
+  <meta name="description" content="Salones de entretención familiar con máquinas de garra, juegos de tickets y premios en Valdivia, Puerto Montt, Alerce, Pitrufquén y Quillota. ¡Celebra tu cumpleaños con nosotros!">
+  <link rel="icon" href="assets/img/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="inicio">
+
+<main>
+  <!-- Historia con multimedia de fondo: el muro de fotos se mueve mientras bajas -->
+  <section class="story" id="historia">
+    <div class="story-bg" aria-hidden="true">
+      <div class="wall" id="wall"></div>
+      <!-- Si algún día tienen un video propio, guárdenlo como assets/video/fondo.mp4 y aparecerá aquí solo -->
+      <video class="video-layer" id="bgVideo" muted loop playsinline preload="none"></video>
+      <div class="story-tint" id="tint"></div>
+    </div>
+
+    <div class="chapter" id="cap-inicio" data-tint="#ff3d6e" data-glow="20%" data-label="Inicio">
+      <div class="chapter-inner">
+        <span class="eyebrow reveal">Entretención familiar · 5 sucursales</span>
+        <h1 class="hero-title reveal">Aquí todos somos <span class="hl">nietos.</span></h1>
+        <p class="hero-lead reveal">Máquinas de garra, juegos de tickets y peluches que se van a casa. Un panorama para consentir a los más chicos y despertar al niño que todos llevamos dentro.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn--sun" href="cumpleanos.html">Reserva tu cumpleaños</a>
+          <a class="btn btn--ghost" href="#sucursales">Ver sucursales</a>
+        </div>
+      </div>
+      <div class="scroll-hint"><span></span>Baja y juega</div>
+    </div>
+
+    <div class="chapter chapter--right" id="cap-garra" data-tint="#5b34d6" data-glow="80%" data-label="La garra">
+      <div class="chapter-inner">
+        <div class="chapter-card">
+          <span class="num reveal">01</span>
+          <span class="eyebrow reveal">Máquinas de garra</span>
+          <h2 class="reveal">Apunta, baja… ¡y atrápalo!</h2>
+          <p class="reveal">Máquinas llenas de peluches, iluminadas y listas para tu mejor jugada. Ese segundo en que la garra sube con tu premio no tiene precio.</p>
+          <ul class="chips reveal"><li>Peluches gigantes</li><li>Personajes de moda</li><li>Para todas las edades</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter" id="cap-tickets" data-tint="#ffc531" data-glow="25%" data-label="Tickets">
+      <div class="chapter-inner">
+        <div class="chapter-card">
+          <span class="num reveal">02</span>
+          <span class="eyebrow reveal">Juegos redemption</span>
+          <h2 class="reveal">Juega, junta tickets y canjéalos.</h2>
+          <p class="reveal">Ruletas, juegos de destreza y simuladores que pagan en tickets. Mientras más juegas, más crece tu tira… y mejor el premio que eliges.</p>
+          <ul class="chips reveal"><li>Juegos de destreza</li><li>Simuladores</li><li>Ruletas de tickets</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter chapter--right" id="cap-premios" data-tint="#18c493" data-glow="75%" data-label="Ganadores">
+      <div class="chapter-inner">
+        <div class="chapter-card">
+          <span class="num reveal">03</span>
+          <span class="eyebrow reveal">Ganadores de verdad</span>
+          <h2 class="reveal">Todas estas caras salieron ganando.</h2>
+          <p class="reveal">Las fotos que ves de fondo son de nuestros visitantes: niños, papás, abuelos y amigos que se llevaron su premio. La próxima puede ser la tuya.</p>
+          <a class="btn btn--mint reveal" href="ganadores.html">Ver ganadores</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter" id="cap-cumple" data-tint="#2fa8ff" data-glow="30%" data-label="Cumpleaños">
+      <div class="chapter-inner">
+        <div class="chapter-card">
+          <span class="num reveal">04</span>
+          <span class="eyebrow reveal">Cumpleaños</span>
+          <h2 class="reveal">El cumpleaños donde el festejado gana.</h2>
+          <p class="reveal">Tú traes a los invitados, nosotros ponemos la diversión. Reserva tu hora en la sucursal más cercana en menos de dos minutos.</p>
+          <a class="btn btn--sun reveal" href="cumpleanos.html">Quiero reservar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ol class="story-rail" id="rail" aria-label="Capítulos"></ol>
+
+  <!-- Cifras -->
+  <section class="stats">
+    <div class="wrap">
+      <div class="ticket reveal">
+        <div class="stat"><b>+10</b><span>años entreteniendo</span></div>
+        <div class="stat"><b>5</b><span>sucursales</span></div>
+        <div class="stat"><b>4</b><span>regiones de Chile</span></div>
+        <div class="stat"><b>7</b><span>días a la semana*</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué hay en cada salón -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Qué encuentras</span>
+        <h2>Un rincón hecho para jugar en familia</h2>
+        <p>Espacios seguros, iluminados y pensados para niños, adolescentes y adultos que nunca dejaron de jugar.</p>
+      </div>
+      <div class="exp-grid">
+        <article class="exp reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M8 8h8M9 8l-3 5 2 2M15 8l3 5-2 2"/><circle cx="12" cy="19" r="3"/></svg></div>
+          <h3>Garra y peluches</h3>
+          <p>Decenas de máquinas tipo grúa con peluches de todos los tamaños y personajes.</p>
+        </article>
+        <article class="exp reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 5v12" stroke-dasharray="2 2"/></svg></div>
+          <h3>Tickets y canje</h3>
+          <p>Juegos redemption que entregan tickets para canjear por premios en el mesón.</p>
+        </article>
+        <article class="exp reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="4"/><path d="M7 11v4M5 13h4"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="14" r="1" fill="currentColor"/></svg></div>
+          <h3>Arcade y simuladores</h3>
+          <p>Juegos de destreza, carreras y desafíos para competir entre hermanos, primos y amigos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sucursales -->
+  <section class="section" id="sucursales" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Sucursales</span>
+        <h2>Hay un rincón cerca de ti</h2>
+        <p>Estamos en malls y puntos céntricos de Los Ríos, Los Lagos, La Araucanía y Valparaíso.</p>
+      </div>
+      <div class="branches" id="branches"></div>
+      <p style="margin-top:14px;color:var(--ink-soft);font-size:.9rem">* Quillota cierra domingos y festivos. Todas las sucursales cierran en feriados irrenunciables.</p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="section video-sec">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="color:var(--sun)">Multimedia</span>
+        <h2>Míralo en movimiento</h2>
+        <p>Luces, sonidos y premios: así se vive un rato en El Rincón de los Nietos.</p>
+      </div>
+      <div class="video-frame reveal" id="videoFrame"></div>
+    </div>
+  </section>
+
+  <!-- Cumpleaños -->
+  <section class="section">
+    <div class="wrap">
+      <div class="bday-band reveal">
+        <div>
+          <span class="eyebrow" style="color:var(--ink)">Cumpleaños</span>
+          <h2>¿Cumpleaños a la vista?</h2>
+          <p>Elige sucursal, día y hora. Te confirmamos por WhatsApp y el día de la fiesta solo te preocupas de soplar las velas.</p>
+          <a class="btn" href="cumpleanos.html">Reservar cumpleaños</a>
+        </div>
+        <div class="stack">
+          <img src="assets/img/multimedia/m4.webp" alt="Niño abrazando un peluche gigante" loading="lazy">
+          <img src="assets/img/ganadores/g1.webp" alt="Familia celebrando un premio" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ganadores -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;max-width:none">
+        <div style="max-width:620px">
+          <span class="eyebrow">Ganadores</span>
+          <h2>Los últimos en salir ganando</h2>
+        </div>
+        <a class="btn btn--ghost" href="ganadores.html" style="color:var(--ink)">Ver todos</a>
+      </div>
+    </div>
+    <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+  </section>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- VISTA PREVIA: quitar esta línea cuando el sitio pase a elrincondelosnietos.cl -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ganadores · El Rincón de los Nietos</title>
+  <meta name="description" content="Galería de ganadores de El Rincón de los Nietos: niños y familias que se llevaron su peluche o premio.">
+  <link rel="icon" href="assets/img/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="ganadores">
+
+<main>
+  <section class="page-hero">
+    <span class="blob a" style="background:var(--mint)"></span><span class="blob b"></span><span class="blob c"></span>
+    <div class="wrap">
+      <span class="eyebrow">Muro de ganadores</span>
+      <h1>Salieron jugando, volvieron ganando</h1>
+      <p>Cada foto es un premio que se fue a casa. Peluches, sonrisas y abrazos de nuestros visitantes en todas las sucursales.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="share-band reveal">
+        <div>
+          <h2>¿Ganaste? ¡Queremos verte!</h2>
+          <p>Mándanos la foto con tu premio y aparece en este muro.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn--sun" id="shareWa" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <a class="btn btn--ghost" id="shareIg" target="_blank" rel="noopener">Etiquétanos en Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto de ganador">
+  <button class="close" aria-label="Cerrar">×</button>
+  <button class="prev" aria-label="Anterior">‹</button>
+  <figure style="margin:0"><img id="lbImg" alt=""><p id="lbText"></p></figure>
+  <button class="next" aria-label="Siguiente">›</button>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  const R = window.RINCON;
+  const g = R.ganadores;
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = g.map((x, i) => `
+    <figure class="reveal" data-i="${i}" tabindex="0">
+      <img src="${x.foto}" alt="${x.texto}" loading="lazy">
+      <figcaption>${x.texto}</figcaption>
+    </figure>`).join("");
+  gallery.querySelectorAll(".reveal").forEach(window.observeReveal);
+
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lbImg");
+  const txt = document.getElementById("lbText");
+  let cur = 0;
+  const show = (i) => { cur = (i + g.length) % g.length; img.src = g[cur].foto; img.alt = g[cur].texto; txt.textContent = g[cur].texto; };
+  const open = (i) => { show(i); lb.classList.add("open"); lb.querySelector(".close").focus(); };
+  const close = () => lb.classList.remove("open");
+
+  gallery.addEventListener("click", (e) => { const f = e.target.closest("figure"); if (f) open(+f.dataset.i); });
+  gallery.addEventListener("keydown", (e) => { const f = e.target.closest("figure"); if (f && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(+f.dataset.i); } });
+  lb.querySelector(".close").onclick = close;
+  lb.querySelector(".prev").onclick = () => show(cur - 1);
+  lb.querySelector(".next").onclick = () => show(cur + 1);
+  lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+  addEventListener("keydown", (e) => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(cur - 1);
+    if (e.key === "ArrowRight") show(cur + 1);
+  });
+
+  document.getElementById("shareWa").href = window.waLink("¡Hola! Gané un premio en El Rincón de los Nietos y quiero compartir mi foto 📸");
+  document.getElementById("shareIg").href = R.instagram;
+})();
+</script>
+</body>
+</html>
